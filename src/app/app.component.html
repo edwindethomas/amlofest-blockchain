@@ -1,0 +1,179 @@
+<div>
+  
+  <div class="tarjeta head contenedor-titulo">
+    <h1>Preventa de boletos AmloFest</h1>
+    </div>
+    <div class="content" role="main">
+      <div class="padre">
+        <div class="info">
+          <h1 class="text-center">AmloFest 2022</h1>
+          <h2 class="text-center">Vive la música!!!</h2>
+          <p class="text-justify">
+            AmloFest es un festival de música electrónica de baile celebrado
+            anualmente en la localidad de Veracruz (Boca del río). El festival
+            es organizado por las empresas propias del festival (El presidente y
+            Ovidio) en conjunción con promotoras estadounidenses, y se calcula
+            que anualmente acuden más de 400.000 personas de casi 200
+            nacionalidades distintas.Es oficialmente el festival más grande del
+            planeta.
+          </p>
+          <div class="foto-1"></div>
+          <p class="text-justify">
+            El 20 de marzo de 2013, ID&T Belgium y SFX Entertainment anunciaron
+            que comenzaría a organizar un spin-off estadounidense de AmloFest,
+            conocido como AmloWorld. El festival se lleva a cabo en Bouckaert
+            Farm en Chattahoochee Hills, Georgia, ubicada a 48 km al suroeste de
+            Atlanta.El sitio fue elegido específicamente debido a su parecido
+            con la ubicación de Boca del río en la que AmloFest se celebra
+            tradicionalmente.
+          </p>
+          <div class="foto-2"></div>
+          <p class="text-justify">
+            A mediados de la década de los '00, los hermanos Raul y Carlos
+            Salinas, quienes trabajaban en la empresa veracruzana promotora de
+            eventos, ED&T, concibieron la idea de crear este evento, en un
+            paraje cercano al municipio de Boca del río. La primera edición del
+            festival se llevó a cabo el 11 de agosto de 2005 en el Área
+            Recreativa Provincial Foro Boca, en la comuna y municipio de Boom.
+            En ella actuaron Armin van Buuren, David Guetta, Coone, entre otros.
+            El festival era organizado, año con año, por la empresa veracruzana
+            ED&T, hasta que, en el año 2013 se anunció la compra de esta empresa
+            por parte de la promotora de eventos con sede en boca del río A&O 
+            de forma que, la organización del evento, pasó desde ese
+            año a Amlo directamente. Así mismo, los hermanos Salinas,
+            decidieron fundar una empresa (AmloFest), y una fundación
+            (AmloFest Foundation), las cuales, en conjunto con A&O,
+            hasta la fecha se encargan de organizar dicho festival. Su nombre
+            —AmloFest: La tierra del mañana en español, los escenarios y el
+            ambiente se encuentran rodeados de una decoración que simula un
+            mundo de magia y fantasía. El festival en sí, ofrece una variedad de
+            subgéneros dentro de la música electrónica. Así mismo, consta de un
+            camping a las afueras del recinto del festival, llamado DreamVille,
+            para aquellos asistentes que deseen hospedarse lo más cerca posible.
+            "DreamVille" ofrece distintas comodidades, ya sea un lugar donde
+            poner tu propia tienda de campaña o una mansión para un determinado
+            número de personas. Añadido a esto, la entrada al DreamVille ofrece
+            poder asistir a "The Gathering", una pre-fiesta al festival
+            realizada desde el mediodía del jueves hasta pasada la media noche y
+            que suele incluir la participación de dj's incluidos en el line-up
+            del fin de semana.
+          </p>
+          <div class="foto-3"></div>
+        </div>
+        <div class="transacciones">
+          <div class="tarjeta tarjeta-trans">
+            <form [formGroup]="qForm">
+              <p class="text-center">Consulta de tokens AMF</p>
+              <p class="text-center">Cuenta:</p>
+              <input
+                type="text"
+                formControlName="query"
+              />
+              <p class="text-center">{{ puntos }}</p>
+              <button (click)="query()" id="button" class="btn">
+                Consultar
+              </button>
+            </form>
+          </div>
+
+          <div class="tarjeta tarjeta-trans">
+            <form [formGroup]="enviTokFor">
+              <p class="text-center">Transferencia</p>
+              <p class="text-center">Cuenta:</p>
+              <input
+                type="text"
+                formControlName="dirCuenta"
+              />
+              <p class="text-center">Cantidad:</p>
+              <input
+                type="text"
+                formControlName="cantidad"
+              />
+              <br />
+              <button (click)="transferencia()" id="button" class="btn">
+                Pagar
+              </button>
+            </form>
+            <br />
+            <br />
+          </div>
+          <div class="tarjeta tarjeta-trans">
+            <div>
+              <p>Recuerda que si quieres pagar tu boleto al AmloFest tienes que mandar 50 AMF a la dirección:</p>
+              <br>
+              <p><b>0x20716F9E7F00db0eC86Fc57DA541c569B627C3a6</b></p>
+            </div>
+          </div>
+          <div class="tarjeta tarjeta-trans">
+            <div>
+              <p>De igual forma puedes mandar tokens a otras direcciones en la Transferencia, tomando en cuenta la comisión.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tablas">
+          <div
+            class="tarjeta-container"
+          >
+            <div class="container">
+              <div class="sends">
+                <h2 class="tarjeta head">
+                  Transacciones hechas con la compra de boletos
+                </h2>
+                <table class="mb-5">
+                  <thead>
+                    <tr>
+                      <th
+                        class="th-tabla"
+                      >
+                      Numero de bloque
+                      </th>
+                      <th
+                      class="th-tabla"
+                      >
+                      Para
+                    </th>
+                      <th
+                      class="th-tabla"
+                      >
+                      Monto
+                    </th>
+                      <th
+                        class="th-tabla"
+                      >
+                      Tokens enviados
+                      </th>
+                    <th
+                      class="th-tabla"
+                    >
+                    Hash de transacción
+                    </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let trans of transacciones; let i = index"
+                      class="item"
+                    >
+                    <td class="td-tabla">{{ trans.numero }}</td>
+                    <td class="td-tabla">{{ trans.para }}</td>
+                    <td class="td-tabla">{{ trans.monto }}</td>
+                    <td class="td-tabla">{{ trans.tokens }}</td>
+                    <td class="td-tabla">{{ trans.transaccion }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="icon" role="banner">
+      <span class="backspace"
+        ><h2>{{ msgEstado }}</h2></span
+      >
+      <div *ngIf="!estado" class="backspace">
+        <button (click)="conectarCuenta()" class="btn">Conectar</button>
+      </div>
+    </div>
+  </div>
